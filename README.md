@@ -40,8 +40,8 @@ From the dataset, the features are used to create a binary classifier that can p
 > Columns removed which are neither targets nor features:
 > 
 >      Identification columns
->        EIN
->        NAME
+>      -  EIN
+>      -  NAME
 
 ### Compile, Train, and Evaluate the Model
 > - Create Neural network model with TensorFlow and Keras 
@@ -93,24 +93,28 @@ Compiling, Training, and Evaluating the Model
 >     
 >       **Accuracy: 73.05%**
 > 
-> ###    *75% Target Model Performance: **NOT ACHIEVED***
+>     75% Target Model Performance: **NOT ACHIEVED**
 >      
 >                                
  ### Model #2 Optimisations
-> 
+> **Hyperparameter selected**
+>   
 >   - Input data
->     
+>
+>         Decrease the features in the model to minimise noise 
 >         Dropped additional columns:
 >          -    AFFILIATION
 >          -    USE_CASE
 >          -    SPECIAL_CONSIDERATIONS
 >   - Hidden layers
 >   
->         Alternate activation function for hidden layers:
+>         Minimise potential vanishing gradient 
+>         Alternate activation function 'Tanh' for hidden layers 
 >          -   1st: nodes = 80 / activation = tanh
 >          -   2nd: nodes = 30 / activation = tanh
 >   - Epochs
->     
+>
+>         Prevent underfitting / overfitting from too few passes to optimise parameters 
 >         Increased number of epochs
 >          -   Epochs: 200
 >
@@ -122,29 +126,34 @@ Compiling, Training, and Evaluating the Model
 > 
 >     
 ### Model #3 Optimisations
+> **Hyperparameter selected**
 > 
 >   - Input data
->     
+> 
+>         Binned values prevent outliers skewing the model 
 >         Adjusted binning parameters:
->          -    CLASSIFICATION 
+>          -    CLASSIFICATION 'Other' cutoff value >200
 >          
 >   - Hidden layers
 >
->         Added hidden layer & adjusted nodes:
->                1st: nodes = 50 / activation = relu
->                2nd: nodes = 40 / activation = relu
->                3rd: nodes = 60 / activation = relu
->                4th: nodes = 30 / activation = relu
+>         Increase model layers to increase the number of calculations (made by nodes) to pass on to the next layer
+>         Alternate activation function 'Tanh' for hidden layers to minimise potential vanishing gradient   
+>         Added hidden layers 3 and 4 & adjusted nodes:
+>          -     1st: nodes = 50 / activation = relu
+>          -     2nd: nodes = 40 / activation = relu
+>          -     3rd: nodes = 60 / activation = relu
+>          -     4th: nodes = 30 / activation = relu
 >    - Epochs
->     
+>
+>          Increase model efficiany with less passes without being too few 
 >          Decreased number of epochs
 >           -   Epochs: 80
 >              
->       **Loss: 57.94%**
+>       **Loss: 57.64%**
 >     
->       **Accuracy: 72.43%**
+>       **Accuracy: 72.39%**
 >     
-> ###    *75% Target Model Performance: **NOT ACHIEVED***
+>    75% Target Model Performance: **NOT ACHIEVED**
 >                          
 
 ## Summary
