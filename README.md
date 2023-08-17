@@ -60,13 +60,7 @@ From the dataset, the features are used to create a binary classifier that can p
 
 ## Results
 
-Compiling, Training, and Evaluating the Model
 
-- How many neurons, layers, and activation functions did you select for your neural network model, and why?
-            
-    
-
-### Optimisation
      
        Hidden layers - made of nodes layers process data to identify patterns for making pretictions.
                Nodes - unit within a neural network
@@ -74,10 +68,9 @@ Compiling, Training, and Evaluating the Model
           Activation - mathematical function applied to the output of a node 
                Epoch - count of complete passes through training dataset 
             Accuracy - % ratio of correct predictions to the total number of predictions
-                Loss - % discrepancy between predicted values and actual targets
-                
-    
-### Model #1 Optimisations
+                Loss - % discrepancy between predicted values and actual targets                
+### **Optimisations**
+### Model #1 
 > **Hyperparameter options selected by Kerastuner**
 > 
 >   - Hidden layers
@@ -89,15 +82,10 @@ Compiling, Training, and Evaluating the Model
 >
 >           -   Epochs: 8
 >
->       **Loss: 55.16%**
->     
->       **Accuracy: 73.05%**
-> 
->     75% Target Model Performance: **NOT ACHIEVED**
->      
+>      ### **Accuracy: 72.93%** | Target Model Performance: **NOT ACHIEVED**     
 >                                
- ### Model #2 Optimisations
-> **Hyperparameter selected**
+ ### Model #2
+> **Changed Hyperparameter**
 >   
 >   - Input data
 >
@@ -117,16 +105,12 @@ Compiling, Training, and Evaluating the Model
 >         Prevent underfitting / overfitting from too few passes to optimise parameters 
 >         Increased number of epochs
 >          -   Epochs: 200
->
->       **Loss: 61.67%**
 >     
->       **Accuracy: 65.38%**
+>       ### **Accuracy: 65.22%** | Target Model Performance: **NOT ACHIEVED**  
+>        ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/8c0a5e86-b8fc-431b-a5e9-04315acd2099)
 >     
->        75% Target Model Performance: **NOT ACHIEVED**
-> 
->     
-### Model #3 Optimisations
-> **Hyperparameter selected**
+### Optimisation #3
+> **Changed Hyperparameter**
 > 
 >   - Input data
 > 
@@ -148,13 +132,11 @@ Compiling, Training, and Evaluating the Model
 >          Increase model efficiany with less passes without being too few 
 >          Decreased number of epochs
 >           -   Epochs: 80
->              
->       **Loss: 57.64%**
->     
->       **Accuracy: 72.39%**
->     
->    75% Target Model Performance: **NOT ACHIEVED**
->                          
+>       
+>        ### **Accuracy: 72.39%** | Target Model Performance: **NOT ACHIEVED**
+>  
+>        ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/3b7f3c57-8cd8-4400-bd63-1011464eeb70)
+>                 
 
 ## Summary
 Summarise the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
