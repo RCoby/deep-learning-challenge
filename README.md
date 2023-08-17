@@ -32,6 +32,15 @@ From the dataset, the features are used to create a binary classifier that can p
 
 ## Method 
 ### Data Preprocessing 
+     
+>               Nodes - unit within a neural network
+>                       (takes input values, performs operations and produces an output to pass to next node) 
+>       Hidden layers - made of nodes, layers process data to identify patterns for making pretictions.
+>          Activation - mathematical function applied to the output of a node 
+>               Epoch - count of complete passes through training dataset 
+>            Accuracy - % ratio of correct predictions to the total number of predictions
+>                Loss - % discrepancy between predicted values and actual targets      
+>                
 > Target/s and features for model:
 > 
 >      Target: y = "IS_SUCCESSFUL" column
@@ -60,31 +69,11 @@ From the dataset, the features are used to create a binary classifier that can p
 
 ## Results
 
+   ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/40fc780a-7246-4476-a366-c44647a01d64)
 
-     
-       Hidden layers - made of nodes layers process data to identify patterns for making pretictions.
-               Nodes - unit within a neural network
-                       (takes input values, performs operations and produces an output to pass to next node) 
-          Activation - mathematical function applied to the output of a node 
-               Epoch - count of complete passes through training dataset 
-            Accuracy - % ratio of correct predictions to the total number of predictions
-                Loss - % discrepancy between predicted values and actual targets                
-### **Optimisations**
-### Model #1 
-> **Hyperparameter options selected by Kerastuner**
-> 
->   - Hidden layers
->     
->           -   1st: nodes = 52 / activation = relu
->           -   2nd: nodes = 52 / activation = relu
->           -   3rd: nodes = 64 / activation = relu
->   - Epochs
->
->           -   Epochs: 8
->
->      ### **Accuracy: 72.93%** | Target Model Performance: **NOT ACHIEVED**     
->                                
- ### Model #2
+### **Model Optimisation**
+
+### #1
 > **Changed Hyperparameter**
 >   
 >   - Input data
@@ -98,19 +87,19 @@ From the dataset, the features are used to create a binary classifier that can p
 >   
 >         Minimise potential vanishing gradient 
 >         Alternate activation function 'Tanh' for hidden layers 
->          -   1st: nodes = 80 / activation = tanh
->          -   2nd: nodes = 30 / activation = tanh
+>          -   1st: nodes = 90 / activation = tanh
+>          -   2nd: nodes = 60 / activation = tanh
 >   - Epochs
 >
 >         Prevent underfitting / overfitting from too few passes to optimise parameters 
 >         Increased number of epochs
->          -   Epochs: 200
+>          -   Epochs: 140
 >     
->       ### **Accuracy: 65.22%** | Target Model Performance: **NOT ACHIEVED**  
->        ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/8c0a5e86-b8fc-431b-a5e9-04315acd2099)
->     
-### Optimisation #3
-> **Changed Hyperparameter**
+>       ### **Accuracy: 65.40%** | Loss: 61.58% | Target Model Performance: **NOT ACHIEVED**  
+>       ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/4b050009-6f4d-4562-8097-2193793b2202)
+
+### #2
+>  **Changed Hyperparameters**
 > 
 >   - Input data
 > 
@@ -121,26 +110,44 @@ From the dataset, the features are used to create a binary classifier that can p
 >   - Hidden layers
 >
 >         Increase model layers to increase the number of calculations (made by nodes) to pass on to the next layer
->         Alternate activation function 'Tanh' for hidden layers to minimise potential vanishing gradient   
+>         Alternate activation function 'ReLu' for hidden layers to minimise vanishing gradient   
 >         Added hidden layers 3 and 4 & adjusted nodes:
->          -     1st: nodes = 50 / activation = relu
->          -     2nd: nodes = 40 / activation = relu
->          -     3rd: nodes = 60 / activation = relu
->          -     4th: nodes = 30 / activation = relu
+>          -     1st: nodes = 100 / activation = tanh
+>          -     2nd: nodes = 80 / activation = tanh
+>          -     3rd: nodes = 90 / activation = relu
+>          -     4th: nodes = 70 / activation = relu
 >    - Epochs
 >
->          Increase model efficiany with less passes without being too few 
+>          Decrease epochs, less passes without being too few 
 >          Decreased number of epochs
 >           -   Epochs: 80
 >       
->        ### **Accuracy: 72.39%** | Target Model Performance: **NOT ACHIEVED**
->  
->        ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/3b7f3c57-8cd8-4400-bd63-1011464eeb70)
->                 
-
+>        ### **Accuracy: 72.45%** | Loss: 58.74% | Target Model Performance: **NOT ACHIEVED**
+>      
+>        ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/c72acc5c-6034-4fe9-a6db-a3155b5e5ae2)
+>
+### #3 
+> **Hyperparameter options selected by Kerastuner**
+> 
+>   - Hidden layers
+>     
+>           -   1st: nodes = 91 / activation = tanh
+>           -   2nd: nodes = 61 / activation = tanh
+>           -   3rd: nodes = 37 / activation = tanh
+>           -   4th: nodes = 31 / activation = tanh
+>   - Epochs
+>
+>           -   Epochs: 100
+>
+>      ### **Accuracy: 72.93%** | Target Model Performance: **NOT ACHIEVED**     
+>                                
 ## Summary
-Summarise the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
-
+> The #2 optimisation provided the best result with the highest accuraccy and lowest loss figures.
+> 
+> However as the model did not meet the minimum Target Model Performance 75% and the high level of loss supports the recommendation of further optimisation.
+> 
+> There are numerous additional optimisation steps yet to be explored in the models, such as Early Stopping based of validation loss. This allows the model to stop training when improvement to loss ceases, to prevent overfitting. 
+>
 -----
 ### References
 Data for this dataset was obtained by edX Boot Camps LLC, from the IRS. Tax Exempt Organization Search Bulk Data Downloads. https://www.irs.gov/
