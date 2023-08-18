@@ -95,7 +95,7 @@ From the dataset, the features are used to create a binary classifier that can p
 >         Increased number of epochs
 >          -   Epochs: 140
 >     
->       ### **Accuracy: 65.40%** | Loss: 61.58% | Target Model Performance: **NOT ACHIEVED**  
+>       ### **Accuracy: 65.34%** | Loss: 61.54% | Target Model Performance: **NOT ACHIEVED**  
 >       ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/4b050009-6f4d-4562-8097-2193793b2202)
 
 ### #2
@@ -122,7 +122,7 @@ From the dataset, the features are used to create a binary classifier that can p
 >          Decreased number of epochs
 >           -   Epochs: 80
 >       
->        ### **Accuracy: 72.45%** | Loss: 58.74% | Target Model Performance: **NOT ACHIEVED**
+>        ### **Accuracy: 72.45%** | Loss: 60.1% | Target Model Performance: **NOT ACHIEVED**
 >      
 >        ![image](https://github.com/RCoby/deep-learning-challenge/assets/124993623/c72acc5c-6034-4fe9-a6db-a3155b5e5ae2)
 >
